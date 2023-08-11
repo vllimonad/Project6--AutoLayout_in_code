@@ -62,7 +62,11 @@ class ViewController: UIViewController {
         
         for label in [label1, label2, label3, label4, label5] {
             label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.17).isActive = true
+            //label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+            //label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+            label.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+            label.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
             
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
